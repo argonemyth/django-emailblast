@@ -3,7 +3,7 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
 from datetime import datetime
-from mailblast import settings
+from emailblast import settings
 
 
 class Newsletter(models.Model):
@@ -15,7 +15,7 @@ class Newsletter(models.Model):
     slug = models.SlugField(db_index=True, unique=True)
     active = models.BooleanField(_('active'), default=True)
     template = models.CharField(max_length=100, blank=True, default="default", 
-                                help_text=_("Name of of the template, which you will need to create under templates/mailblast"))
+                                help_text=_("Name of of the template, which you will need to create under templates/emailblast"))
     use_html = models.BooleanField(_('Use HTML?'), default=True)
      
     sender_name = models.CharField(_('sender name'), max_length=200)
@@ -62,9 +62,9 @@ class Newsletter(models.Model):
     def get_templates(self):
         temp_name = self.template.lower()
         if self.use_html:
-            return "mailblast/" + temp_name + ".html", "mailblast/" + temp_name + ".txt"
+            return "emailblast/" + temp_name + ".html", "emailblast/" + temp_name + ".txt"
         else:
-            return None, "mailblast/" + temp_name + ".txt"
+            return None, "emailblast/" + temp_name + ".txt"
         
         
 class Subscription(models.Model):

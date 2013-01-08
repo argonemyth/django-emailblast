@@ -5,7 +5,7 @@ from celery import task
 import smtplib
 from time import sleep
 from pynliner import Pynliner
-from mailblast.models import Email, SentLog
+from emailblast.models import Email, SentLog
 
 
 class UnicodeSafePynliner(Pynliner):

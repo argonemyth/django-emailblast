@@ -2,8 +2,8 @@
 from django.contrib import admin
 from django.utils.translation import ugettext_lazy as _
 
-from mailblast.models import Newsletter, Subscription, Email, SentLog
-from mailblast.tasks import send_newsletter
+from emailblast.models import Newsletter, Subscription, Email, SentLog
+from emailblast.tasks import send_newsletter
 
 class NewsletterAdmin(admin.ModelAdmin):
     """
