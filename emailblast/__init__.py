@@ -1,6 +1,12 @@
 VERSION = (0, 0, 5,)
 __version__ = '.'.join(map(str, VERSION))
 
+def get_version():
+    """
+    Returns string with digit parts only.
+    """
+    return __version__ 
+
 # Do not use Django settings at module level as recommended
 try:
     from django.utils.functional import LazyObject
@@ -9,7 +15,7 @@ except ImportError:
 else:
     class LazySettings(LazyObject):
         def _setup(self):
-            from mailblast import default_settings
+            from emailblast import default_settings
             self._wrapped = Settings(default_settings)
 
     class Settings(object):
