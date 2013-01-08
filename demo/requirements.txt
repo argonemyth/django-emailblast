@@ -1,0 +1,8 @@
+# Django
+Django==1.4.1
+
+# Django-south for migrations
+South
+
+# django emailblast 
+git+https://github.com/argonemyth/django-emailblast.git
