@@ -8,3 +8,4 @@ env
 
 # Demo
 demo/demo.db
+*egg-info

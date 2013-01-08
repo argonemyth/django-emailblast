@@ -1,7 +1,5 @@
-include README.mkd
+include README.md
 include MANIFEST.in
-include tests.py
-include requirements.txt
 recursive-include emailblast/fixtures *.json
 recursive-include emailblast/templates *.html *.txt *.haml
 recursive-include emailblast/locale *.po *.mo
