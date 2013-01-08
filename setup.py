@@ -24,7 +24,7 @@ setup(name='django-emailblast',
       url='https://github.com/argonemyth/django-emailblast',
       download_url='https://github.com/argonemyth/django-emailblast/downloads',
       packages = find_packages(exclude=['demo', 'demo.*']),
-      package_data={'emailblast': templates}),
+      package_data={'emailblast': templates},
       include_package_data=True,
       install_requires = [
         'Django>=1.3.1',
