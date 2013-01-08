@@ -1,5 +1,5 @@
 from setuptools import setup, find_packages
-import sys, os
+import sys
 
 emailblast = __import__('emailblast')
 
@@ -11,9 +11,6 @@ except IOError, err:
         "``long_description`` (%s)\n" % readme_file)
     sys.exit(1)
 
-template_dir = "emailblast/templates/emailblast"
-templates = [os.path.join(template_dir, f) for f in os.listdir(template_dir)]
-
 setup(name='django-emailblast',
       version=emailblast.get_version(),
       description='Another newsletter solution for Django',
@@ -24,7 +21,6 @@ setup(name='django-emailblast',
       url='https://github.com/argonemyth/django-emailblast',
       download_url='https://github.com/argonemyth/django-emailblast/downloads',
       packages = find_packages(exclude=['demo', 'demo.*']),
-      package_data={'emailblast': templates},
       include_package_data=True,
       install_requires = [
         'Django>=1.3.1',
