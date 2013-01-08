@@ -3,5 +3,8 @@
 *.pyc
 local_settings.py
 
-# Virtualenv
+# Virtual environment
 env
+
+# Demo
+demo/demo.db
