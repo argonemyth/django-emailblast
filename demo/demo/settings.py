@@ -155,3 +155,14 @@ LOGGING = {
         },
     }
 }
+
+# Django Celery
+import djcelery
+djcelery.setup_loader()
+
+# if local_settings.py file present, import the variables from it (overriding
+# locally).
+try:
+    from local_settings import *
+except ImportError:
+    pass
