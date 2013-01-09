@@ -34,18 +34,18 @@ Since the app relies on Django celery to send emails, we will also cover how to 
 
 2. Add 'djcelery' and 'emailblast' to `INSTALLED_APPS` in settings.py:
 
-    INSTALLED_APPS = (
-        'django.contrib.auth',
-        'django.contrib.contenttypes',
-        'django.contrib.sessions',
-        'django.contrib.sites',
-        'django.contrib.messages',
-        'django.contrib.staticfiles',
-        'django.contrib.admin',
-        ...
-        'djcelery',
-        'mailblast',
-    ) 
+>INSTALLED_APPS = (
+>    'django.contrib.auth',
+>    'django.contrib.contenttypes',
+>    'django.contrib.sessions',
+>    'django.contrib.sites',
+>    'django.contrib.messages',
+>    'django.contrib.staticfiles',
+>    'django.contrib.admin',
+>    ...
+>    'djcelery',
+>    'mailblast',
+>    ) 
 
 3. Add necessery configurations for celery:
 
