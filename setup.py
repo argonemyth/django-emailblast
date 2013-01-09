@@ -27,6 +27,7 @@ setup(name='django-emailblast',
         'celery>=3.0.10',
         'BeautifulSoup',
         'cssutils', 
+        'pynliner',
         ### Required to build documentation
         # 'sphinx',
         # 'south',
