@@ -28,13 +28,13 @@ Installation
 
 Since the app relies on Django celery to send emails, we will also cover how to setup the celery.
 
-1. Install the app:
+### Install the app:
 
 ```
 $ pip install git+https://github.com/argonemyth/django-emailblast.git
 ```
 
-2. Add 'djcelery' and 'emailblast' to `INSTALLED_APPS` in settings.py:
+### Add 'djcelery' and 'emailblast' to `INSTALLED_APPS` in settings.py:
 
 ```python
 INSTALLED_APPS = (
@@ -51,7 +51,7 @@ INSTALLED_APPS = (
     ) 
 ```
 
-3. Add necessery configurations for celery:
+### Add necessery configurations for celery:
 
 ```python
 # Django Celery
@@ -65,7 +65,7 @@ BROKER_URL = 'amqp://guest:guest@localhost:5672/'
 CELERY_IMPORTS = ("emailblast.tasks", )
 ```
 
-4. Syncdb
+### Syncdb
 
 If you have south installed:
 
