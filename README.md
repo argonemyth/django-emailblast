@@ -30,34 +30,40 @@ Since the app relies on Django celery to send emails, we will also cover how to 
 
 1. Install the app:
 
-    $ pip install git+https://github.com/argonemyth/django-emailblast.git
+```
+$ pip install git+https://github.com/argonemyth/django-emailblast.git
+```
 
 2. Add 'djcelery' and 'emailblast' to `INSTALLED_APPS` in settings.py:
 
->INSTALLED_APPS = (
->    'django.contrib.auth',
->    'django.contrib.contenttypes',
->    'django.contrib.sessions',
->    'django.contrib.sites',
->    'django.contrib.messages',
->    'django.contrib.staticfiles',
->    'django.contrib.admin',
->    ...
->    'djcelery',
->    'mailblast',
->    ) 
+```python
+INSTALLED_APPS = (
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.sites',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    'django.contrib.admin',
+    ...
+    'djcelery',
+    'mailblast',
+    ) 
+```
 
 3. Add necessery configurations for celery:
 
-    # Django Celery
-    import djcelery
-    djcelery.setup_loader()
+```python
+# Django Celery
+import djcelery
+djcelery.setup_loader()
 
-    # Celery Broker settings.
-    BROKER_URL = 'amqp://guest:guest@localhost:5672/'
+# Celery Broker settings.
+BROKER_URL = 'amqp://guest:guest@localhost:5672/'
 
-    # List of modules to import when celery starts.
-    CELERY_IMPORTS = ("emailblast.tasks", )
+# List of modules to import when celery starts.
+CELERY_IMPORTS = ("emailblast.tasks", )
+```
 
 4. Syncdb
 
