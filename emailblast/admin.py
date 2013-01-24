@@ -23,7 +23,7 @@ class SubscriptionAdmin(admin.ModelAdmin):
     """
     Admin class for subscription.
     """
-    list_display = ('__unicode__', 'subscribed', 'date_create')
+    list_display = ('__unicode__', 'name', 'email', 'subscribed', 'date_create')
     list_editable = ('subscribed', )
     list_filter = ('subscribed', )
     search_fields = ('email', )
