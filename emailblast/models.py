@@ -2,6 +2,7 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from django.contrib.auth.models import User
+
 from datetime import datetime
 from emailblast import settings
 
@@ -189,8 +190,16 @@ class Email(models.Model):
         self.save()
  
     @models.permalink
+    def preview_html(self):
+        return ('email_preview', (), {'slug': self.slug, 'format': "html"})
+
+    @models.permalink
+    def preview_text(self):
+        return ('email_preview', (), {'slug': self.slug, 'format': "txt"})
+
+    @models.permalink
     def get_absolute_url(self):
-        return ('newsletter_email_preview', (self.slug,))
+        return ('view_email', (), {'slug': self.slug})
 
 
 class SentLog(models.Model):
