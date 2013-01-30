@@ -9,3 +9,6 @@ env
 # Demo
 demo/demo.db
 *egg-info
+
+# swap files from text editor
+*.swp
